@@ -14,12 +14,15 @@
   1. 安装Rime输入法,并注销或重启
   2. 下载仓库所有配置文件到本地
   3. 右上角打开用户设定文件夹
+  
   ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-1lAuOL.png)
   
   4. 将下载的所有文件覆盖到用户设定文件夹
+  
   ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-Ry5ZfG.png)
   
   5. 重新部署，部署完毕即可用
+  
   ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-7TutoO.png)
   
   ## 配置文件
