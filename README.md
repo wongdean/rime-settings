@@ -13,7 +13,7 @@
   ## 用法
   1. 安装Rime输入法,并注销或重启
   2. 下载仓库所有配置文件到本地
-  3. 右上角打开用户设定文件夹
+  3. 右上角打开用户设定，会弹出用户设定文件夹
   
   ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-1lAuOL.png)
   
@@ -29,6 +29,8 @@
   - default.custom.yaml 设置输入法、如何切换输入法、翻页等
   - double_pinyin_flypy.custom.yaml 双拼方案，我用的是小鹤双拼
   - squirrel.custom.yaml 设置哪些软件默认英文输入，输入法皮肤等
+
+  配置文件中大部分都有注释。
   
   ## 参考/致谢
   1. [Mac 下调校 Rime](https://mritd.me/2019/03/23/oh-my-rime/)
