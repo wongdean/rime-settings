@@ -5,6 +5,9 @@ patch:
     - name: ascii_mode
       reset: 0
       states: [ 中文, 西文 ]
+    - name: emoji_suggestion
+      reset: 1
+      states: [ "Yes", "No" ]
     - name: full_shape
       states: [ 半角, 全角 ]
     - name: zh_simp
@@ -12,22 +15,18 @@ patch:
       states: [ 漢字, 汉字 ]
     - name: ascii_punct
       states: [ 。，, ．， ]
-    - name: show_emoji
-      reset: 1
-      states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
   engine/translators:
     - punct_translator
     - script_translator
   engine/filters:
+    - simplifier@emoji_suggestion
     - simplifier@zh_simp
-    - simplifier@emoji_conversion
     - uniquifier
     # - charset_filter@gbk
     - single_char_filter
-  emoji_conversion:
+  emoji_suggestion:
     opencc_config: emoji.json
-    option_name: show_emoji
-    tags: abc
+    option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
   punctuator:
@@ -38,40 +37,6 @@ patch:
       "/dn": [⌘, ⌥, ⇧, ⌃, ⎋, ⇪, , ⌫, ⌦, ↩︎, ⏎, ↑, ↓, ←, →, ↖, ↘, ⇟, ⇞]
       "/fh": [ ©, ®, ℗, ℠, ™, ℡, ⓘ, ♂, ♀, ☉, ☊, ☋, ☌, ☍, ☐, ☑︎, ☒, ☜, ☝, ☞, ☟, ✎, ✄, ♲, ♻, ⚐, ⚑, ⚠]
       "/xh": [ ＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
-    full_shape:
-      " ": {commit: "　"}
-      "!": {commit: "！"}
-      "\"": {pair: ["“", "”"]}
-      "#": ["＃", "⌘"]
-      "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
-      "%": ["％", "°", "℃"]
-      "&": "＆"
-      "'": {pair: ["‘", "’"]}
-      "(": "（"
-      ")": "）"
-      "*": ["＊", "·", "・", "×", "※", "❂"]
-      "+": "＋"
-      ",": {commit: "，"}
-      # "-": "－"
-      .: {commit: "。"}
-      "/": ["／", "÷"]
-      ":": {commit: "："}
-      ";": {commit: "；"}
-      "<": ["《", "〈", "«", "‹"]
-      "=": "＝"
-      ">": ["》", "〉", "»", "›"]
-      "?": {commit: "？"}
-      "@": ["＠", "☯"]
-      "[": ["「", "【", "〔", "［"]
-      "\\": ["、", "＼"]
-      "]": ["」", "】", "〕", "］"]
-      "^": {commit: "……"}
-      _: "——"
-      "`": "｀"
-      "{": ["『", "〖", "｛"]
-      "|": ["·", "｜", "§", "¦"]
-      "}": ["』", "〗", "｝"]
-      "~": "～"
     half_shape:
       "#": "#"
       "`": "`"
@@ -124,13 +89,3 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
-
-  ### 加載 easy_en 依賴
-  # "schema/dependencies/@1": easy_en
-  # "engine/translators/@4": table_translator@english  # 載入翻譯英文的碼表翻譯器，取名爲 english
-  # english:  # english 翻譯器的設定項
-  #   dictionary: easy_en
-  #   spelling_hints: 9
-  #   enable_completion: false     # 是否启用英文输入联想补全
-  #   enable_sentence: false
-  #   initial_quality: 0           # 调整英文候选词的位置，如 -3 会更靠后
