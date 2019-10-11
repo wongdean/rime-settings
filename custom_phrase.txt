@@ -1,0 +1,67 @@
+# Rime table
+# coding: utf-8
+#@/db_name  custom_phrase.txt
+#@/db_type	tabledb
+#
+# 用於【朙月拼音】系列輸入方案
+# 【小狼毫】0.9.21 以上
+#
+# 請將該文件以UTF-8編碼保存爲
+# Rime用戶文件夾/custom_phrase.txt
+#
+# 碼表各字段以製表符（Tab）分隔
+# 順序爲：文字、編碼、權重（決定重碼的次序、可選）
+#
+# 雖然文本碼表編輯較爲方便，但不適合導入大量條目
+#
+# !!! 如果在 sublime 中操作，有可能会将 tab 替换为四个空格，无法生效
+
+中州韻輸入法引擎	rime	2
+又双叒叕	yyy
+http://rime.im/	rime	1
+Rime	rime	3
+⌘	cmd
+⌃	ctl
+⌥	opt
+⇧	shift
+GBK	gbk
+UTF-8	utfba
+macOS High Sierra	macos	2
+macOS Mojave	macos	3
+macOS	macos	4
+macOS Sierra	macos	1
+Google Analytics	ga
+CSS	css
+HTML html
+iOS	ios
+iPad	ipad
+iPhone	iphone
+iTunes	itunes
+JavaScript	js
+jQuery	jquery
+MySQL	mysql
+SQL	sql
+Objective-C	ojbc
+Ruby	ruby
+Rust	rust
+WeChat	wechat
+Swift	swift
+MacBook Pro	mbp
+MacBook	macbook
+Apple	apple
+U盘	upj
+GitHub	github
+iMac	imac
+iPad	ipad
+iPad	ipad
+iPhone	iphone
+iPod	ipod
+IPTV	iptv
+IPv4	ipv
+IPv6	ipv
+Mac App Store	mas
+OS X	osx
+X-Ray	xray
+Xbox One	xbox
+Youku	youku
+YouTube	youtube
