@@ -43,6 +43,9 @@ patch:
       ascii_mode: true
     com.agilebits.onepassword7-helper:
       ascii_mode: true
+    com.kapeli.dashdoc:
+      ascii_mode: true
+      
 
 # us_keyboard_layout: true
 
