@@ -11,6 +11,9 @@
 name: pinyin_simp
 version: "0.1"
 sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - luna_pinyin.sougou
 ...
 
 一	yi	134392
