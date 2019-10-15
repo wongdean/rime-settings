@@ -5,7 +5,7 @@ patch:
   app_options:
     com.apple.dt.Xcode:
       ascii_mode: true
-    com.runningwithcrayons.Alfred-3:
+    com.runningwithcrayons.Alfred:
       ascii_mode: true
     com.apple.Terminal:
       ascii_mode: true
@@ -44,6 +44,10 @@ patch:
     com.agilebits.onepassword7-helper:
       ascii_mode: true
     com.kapeli.dashdoc:
+      ascii_mode: true
+    com.svend.uPic:
+      ascii_mode: true
+    com.eusoft.eudic:
       ascii_mode: true
       
 
