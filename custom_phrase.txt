@@ -14,7 +14,7 @@
 #
 # 雖然文本碼表編輯較爲方便，但不適合導入大量條目
 #
-# !!! 如果在 sublime 中操作，有可能会将 tab 替换为四个空格，无法生效
+# no comment
 
 中州韻輸入法引擎	rime	2
 又双叒叕	yyy
@@ -65,3 +65,12 @@ X-Ray	xray
 Xbox One	xbox
 Youku	youku
 YouTube	youtube
+411522199208134213	ufffvg
+18611894591	uzjihc
+wang.deans@hotmail.com	hm
+又双叒叕	yzyz
+iCloud	icloud
+Quantumult	quan
+Dropbox	dropbox
+T恤	txu
+Mac	mac

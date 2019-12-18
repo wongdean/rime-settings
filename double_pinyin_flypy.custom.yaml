@@ -1,6 +1,6 @@
 patch:
   schema/dependencies: {}
-  schema/name: 小鶴雙拼
+  schema/name: 小鹤双拼
   switches:
     - name: ascii_mode
       reset: 0
@@ -41,13 +41,12 @@ patch:
       ';' : { commit: ； }
       ':' : { commit: ： }
       '~' : ～
-      '\': 、
-      "'": "'"
+      '\' : 、
       '{' : [ 『, 〖, ｛ ]
       '}' : [ 』, 〗, ｝ ]
-      "$": ["¥", "$", "€", "£", "¢", "¤"]
-      "<": ["《", "〈", "«", "<"]
-      ">": ["》", "〉", "»", ">"]
+      "$" : ["¥", "$", "€", "£", "¢", "¤"]
+      "<" : ["《", "〈", "«", "<"]
+      ">" : ["》", "〉", "»", ">"]
 
   ### 精简 simp
   translator/dictionary: pinyin_simp
