@@ -65,9 +65,6 @@ X-Ray	xray
 Xbox One	xbox
 Youku	youku
 YouTube	youtube
-411522199208134213	ufffvg
-18611894591	uzjihc
-wang.deans@hotmail.com	hm
 又双叒叕	yzyz
 iCloud	icloud
 Quantumult	quan
