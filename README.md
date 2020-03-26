@@ -36,13 +36,19 @@
   ## 几个问题(有其他问题，请开 issue)
   ### 1、修改输入法皮肤
   `squirrel.custom.yaml` 文件，写了简单的注释。
+
   如果看不懂，请参考 https://mritd.me/2019/03/23/oh-my-rime/ 第四部分
+
   ### 2、拓展词库
   将你的词库文件(注意词库格式)拷贝到文件夹，修改 `luna_pinyin.extended.dict.yaml`文件
+
   将词库的名字加在 `import_tables` 下(依然要注意格式)
+
   重新部署即可
+
   ### 3、字符不全
   **待解决**，如果你有此类问题，请开 issue，附上你的系统版本。
+  
   eomji 字符文件都在 `opencc` 文件夹中。
 
   
