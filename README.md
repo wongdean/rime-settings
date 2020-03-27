@@ -24,10 +24,10 @@
   
   
   ## 配置文件
-  - default.custom.yaml 设置输入法、如何切换输入法、翻页等
-  - double_pinyin_flypy.custom.yaml 双拼方案，我用的是小鹤双拼
-  - squirrel.custom.yaml 设置哪些软件默认英文输入，输入法皮肤等
-  - custom_phrase.txt 设置快捷输入，修改完成后要重新部署才能生效
+  - `default.custom.yaml` 设置输入法、如何切换输入法、翻页等
+  - `double_pinyin_flypy.custom.yaml` 双拼方案，我用的是小鹤双拼
+  - `squirrel.custom.yaml` 设置哪些软件默认英文输入，输入法皮肤等
+  - `custom_phrase.txt` 设置快捷输入，修改完成后要重新部署才能生效
   配置文件中大部分都有注释。
 
   ## 全拼用户
@@ -56,9 +56,13 @@
   所以请使用不会自动替换`tab`为空格的编辑器修改此文件
 
   ### 4、emoji 无法显示
-  **待解决**，如果你有此类问题，请开 issue，附上你的系统版本。
-  
+  **已解决**，下载除字体外的所有文件，然后重新部署
+
   eomji 字符文件都在 `opencc` 文件夹中。
+
+
+  ## 如果你有其他问题，请开 issue，附上你的系统版本。
+  
 
   
   ## 参考/致谢
