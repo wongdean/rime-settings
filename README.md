@@ -60,6 +60,11 @@
 
   eomji 字符文件都在 `opencc` 文件夹中。
 
+  ### 5、如何让鼠须管在软件中默认英文
+  `squirrel.custom.yaml`文件中`app_options`下，照葫芦画瓢加上你需要添加的软件即可
+
+  软件前缀在`/Users/coco/Library/Preferences/`中找(`shift + command + G`可直接跳转到路径,注意不要复制后缀)
+
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
   
