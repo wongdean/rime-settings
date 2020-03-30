@@ -1,9 +1,0 @@
-var:
-  last_build_time: 1585202636
-  option:
-    simplification: true
-  previously_selected_schema: double_pinyin_flypy
-  schema_access_time:
-    double_pinyin_flypy: 1584946817
-    luna_pinyin_fluency: 1548337106
-    luna_pinyin_simp: 1575810328
