@@ -22,7 +22,6 @@ use_preset_vocabulary: true
 import_tables:
   - luna_pinyin
   - luna_pinyin.extra_hanzi
-  #- pinyin_simp.dict
   - luna_pinyin.sgmain
   - luna_pinyin.chat
   - luna_pinyin.net
