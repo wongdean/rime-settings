@@ -76,9 +76,12 @@
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
 
+  -----
+
   ## 已知问题
   ~~**中文状态下，无法打出「-」**~~
   **已解决**
+  
   有此问题的，替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
 
 
