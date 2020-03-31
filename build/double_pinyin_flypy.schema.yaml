@@ -2,13 +2,15 @@ __build_info:
   rime_version: 1.5.3
   timestamps:
     default: 1561294610
-    default.custom: 1571005321
-    double_pinyin_flypy.custom: 1584944533
-    double_pinyin_flypy.schema: 1551338297
+    default.custom: 1585659520
+    double_pinyin_flypy.custom: 1585660267
+    double_pinyin_flypy.schema: 1585660249
     key_bindings: 1561294610
     key_bindings.custom: 0
     punctuation: 1561294610
     punctuation.custom: 0
+    symbols: 1585639538
+    symbols.custom: 0
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -44,12 +46,13 @@ engine:
     - punct_translator
     - script_translator
     - "table_translator@custom_phrase"
+    - "table_translator@custom_phrase"
 key_binder:
   bindings:
     - {accept: ISO_Left_Tab, send: Page_Up, when: composing}
     - {accept: "Shift+Tab", send: Page_Up, when: composing}
     - {accept: Tab, send: Page_Down, when: composing}
-    - {accept: minus, send: Page_Up, when: always}
+    - {accept: minus, send: Page_Up, when: paging}
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: bracketleft, send: Page_Up, when: paging}
     - {accept: bracketright, send: Page_Down, when: has_menu}
@@ -57,26 +60,79 @@ key_binder:
 menu:
   page_size: 8
 punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤", "₩"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": ["＝", "々", "〃"]
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
   half_shape:
     "!": {commit: "！"}
     "\"": {pair: ["“", "”"]}
+    "#": ["#", "№"]
     "$": ["¥", "$", "€", "£", "¢", "¤"]
+    "%": ["%", "％", "°", "℃", "‰", "‱", "℉"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂", "⁂", "☮", "☯", "☣"]
+    "+": "+"
     ",": {commit: "，"}
+    "-": "-"
     .: {commit: "。"}
+    "/": ["、", "､", "/", "／", "÷"]
     ":": {commit: "："}
     ";": {commit: "；"}
     "<": ["《", "〈", "«", "<"]
+    "=": ["=", "々", "〃"]
     ">": ["》", "〉", "»", ">"]
     "?": {commit: "？"}
+    "@": ["@", "©", "®", "℗"]
+    "[": ["「", "【", "〔", "［"]
     "\\": "、"
+    "]": ["」", "】", "〕", "］"]
     "^": {commit: "……"}
+    _: "——"
+    "`": ["`", "‵", "‶", "‷", "′", "″", "‴", "⁗"]
     "{": ["『", "〖", "｛"]
+    "|": ["·", "・", "|", "｜", "§", "¦", "‖"]
     "}": ["』", "〗", "｝"]
     "~": "～"
+  import_preset: symbols
 recognizer:
   import_preset: default
   patterns:
     email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    punct: "^/([a-z]+|[0-9])$"
     reverse_lookup: "`[a-z]*'?$"
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
@@ -145,5 +201,6 @@ switches:
 translator:
   dictionary: luna_pinyin.extended
   preedit_format:
-    {}
-  prism: double_pinyin_flypy
+    - "xform/([nl])v/$1ü/"
+    - "xform/([nl])ue/$1üe/"
+    - "xform/([jqxy])v/$1u/"

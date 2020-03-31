@@ -67,12 +67,25 @@
 
   重新部署
 
+  ### 6、如何自定义符号
+  如打下`\`，希望上屏哪些字符，都可自定义，在`double_pinyin_flypy.custom.yaml`文件中`punctuator`部分
+
+  参照`symbols.yaml`修改(不建议修改`symbols.yaml`)
+
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
 
   ## 已知问题
   ### 中文状态下，无法打出「-」
-  推测可能跟「-」的符号设置有关(在`double_pinyin_flypy.custom.yaml`文件)
+  **已解决**
+  替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
+
+  然后重新部署
+
+  ## 待完善
+  下一步计划重新做一下词库，不过现在的词库也还可以了
+
+
 
   **希望有能力的大佬解决一下**，万分感谢
   

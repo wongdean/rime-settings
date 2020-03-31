@@ -10,7 +10,7 @@ patch:
       states: [ "Yes", "No" ]
     - name: full_shape
       states: [ 半角, 全角 ]
-    - name: zh_simp
+    - name: simplification
       reset: 1
       states: [ 漢字, 汉字 ]
     - name: ascii_punct
@@ -18,14 +18,14 @@ patch:
   engine/translators:
     - punct_translator
     - script_translator
-    - "table_translator@custom_phrase"
+    - table_translator@custom_phrase
   engine/filters:
     - simplifier@emoji_suggestion
-    - simplifier@zh_simp
-    #- simplifier
+    #- simplifier@zh_simp
+    - simplifier
     - uniquifier
-    # - charset_filter@gbk
-    - single_char_filter
+    #- charset_filter@gbk
+    #- single_char_filter
   engine/processors:
     - ascii_composer
     - recognizer
@@ -35,12 +35,12 @@ patch:
     - selector
     - navigator
     - express_editor
-  engine/segmentors:
-    - ascii_segmentor
-    - matcher
-    - abc_segmentor
-    - punct_segmentor
-    - fallback_segmentor
+  # engine/segmentors:
+  #   - ascii_segmentor
+  #   - matcher
+  #   - abc_segmentor
+  #   - punct_segmentor
+  #   - fallback_segmentor
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
@@ -59,18 +59,18 @@ patch:
       ':' : { commit: ： }
       '~' : ～
       '\' : 、
+      '#' : '#'
+      '*' : '*'
       '{' : [ 『, 〖, ｛ ]
       '}' : [ 』, 〗, ｝ ]
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
 
-  ### 精简 simp
-patch:
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #標點
-  'punctuator/import_preset': mysymbols
+  'punctuator/import_preset': symbols
   'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
   # translator/dictionary: luna_pinyin.extended
   # translator/preedit_format: {}

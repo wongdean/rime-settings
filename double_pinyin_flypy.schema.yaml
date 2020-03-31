@@ -25,9 +25,6 @@ switches:
     states: [ 。，, ．， ]
 
 engine:
-  filters:
-    - simplifier
-    - uniquifier
   processors:
     - ascii_composer
     - recognizer
@@ -45,9 +42,11 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - "table_translator@custom_phrase"
     - reverse_lookup_translator
     - script_translator
+  filters:
+    - simplifier
+    - uniquifier
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
@@ -86,11 +85,41 @@ speller:
     #- abbrev/^(.).+$/$1/
 
 translator:
-  dictionary: luna_pinyin.extended
+  dictionary: luna_pinyin
+  prism: double_pinyin_flypy
   preedit_format:
-    - "xform/([nl])v/$1ü/"
-    - "xform/([nl])ue/$1üe/"
-    - "xform/([jqxy])v/$1u/"
+    - xform/([bpmfdtnljqx])n/$1iao/
+    - xform/(\w)g/$1eng/
+    - xform/(\w)q/$1iu/
+    - xform/(\w)w/$1ei/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/(\w)t/$1ve/
+    - xform/(\w)y/$1un/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)p/$1ie/
+    - xform/([jqx])s/$1iong/
+    - xform/(\w)s/$1ong/
+    - xform/(\w)d/$1ai/
+    - xform/(\w)f/$1en/
+    - xform/(\w)h/$1ang/
+    - xform/(\w)j/$1an/
+    - xform/([gkhvuirzcs])k/$1uai/
+    - xform/(\w)k/$1ing/
+    - xform/([jqxnl])l/$1iang/
+    - xform/(\w)l/$1uang/
+    - xform/(\w)z/$1ou/
+    - xform/([gkhvuirzcs])x/$1ua/
+    - xform/(\w)x/$1ia/
+    - xform/(\w)c/$1ao/
+    - xform/([dtgkhvuirzcs])v/$1ui/
+    - xform/(\w)b/$1in/
+    - xform/(\w)m/$1ian/
+    - xform/([aoe])\1(\w)/$1$2/
+    - "xform/(^|[ '])v/$1zh/"
+    - "xform/(^|[ '])i/$1ch/"
+    - "xform/(^|[ '])u/$1sh/"
+    - xform/([jqxy])v/$1u/
+    - xform/([nl])v/$1ü/
 
 reverse_lookup:
   dictionary: stroke
