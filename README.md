@@ -61,7 +61,7 @@
   eomji 字符文件都在 `opencc` 文件夹中。
 
   ### 5、如何让鼠须管在软件中默认英文
-  在`～/Library/Preferences/`中找到你需要添加的软件名称(`shift + command + G`可直接跳转到路径)，复制软件名及其前缀
+  在`/User/你的用户名/Library/Preferences/`中找到你需要添加的软件名称
 
   `squirrel.custom.yaml`文件中`app_options`下，照葫芦画瓢添加
 
