@@ -61,6 +61,7 @@ patch:
       '\' : 、
       '#' : '#'
       '*' : '*'
+      '@' : '@'
       '{' : [ 『, 〖, ｛ ]
       '}' : [ 』, 〗, ｝ ]
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
@@ -72,8 +73,7 @@ patch:
   #標點
   'punctuator/import_preset': symbols
   'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
-  # translator/dictionary: luna_pinyin.extended
-  # translator/preedit_format: {}
+  'translator/preedit_format': {}
   # translator/enable_correction: true
 
   ### 双拼使用自定义词典 custom_phrase.txt
