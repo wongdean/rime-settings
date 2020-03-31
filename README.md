@@ -77,17 +77,18 @@
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
 
   ## 已知问题
-  ### 中文状态下，无法打出「-」
+  ～～**中文状态下，无法打出「-」**～～
   **已解决**
-  替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
+  有此问题的，替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
 
-  重新部署
+
+  -----
 
   ## 待完善
   下一步计划重新做一下词库，不过现在的词库也还可以了
 
   
-
+  ------
   
   ## 参考/致谢
   1. [Mac 下调校 Rime](https://mritd.me/2019/03/23/oh-my-rime/)
