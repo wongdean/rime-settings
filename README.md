@@ -3,12 +3,13 @@
   
   version: 0.14.0
   
-  Date:2020-03-26
+  Date:2020-03-31
   
   ----
   
-  这几天折腾了一下 Rime 输入法，主要系统输入法太难用了。现在搞的差不多了。输入界面:
+  折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
   ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
+
   
   ## 用法
   1. 安装Rime输入法,并注销或重启
@@ -35,39 +36,39 @@
   
   注意更改快捷输入对应的全拼内容
 
-  ## 几个问题
-  ### 1、修改输入法皮肤
+  ## 几个你可能会关注的问题
+  ### 1、怎么修改输入法皮肤？
   `squirrel.custom.yaml` 文件，写了简单的注释。
 
   如果看不懂，请参考 https://mritd.me/2019/03/23/oh-my-rime/ 第四部分
 
-  ### 2、拓展词库
+  ### 2、怎么拓展词库？
   将你的词库文件(注意词库格式)拷贝到文件夹，修改 `luna_pinyin.extended.dict.yaml`文件
 
   将词库的名字加在 `import_tables` 下(依然要注意格式)
 
   重新部署即可
   
-  ### 3、添加自造词
+  ### 3、怎么添加自造词？
   添加至`custom_phrase.txt`文件中
   
   需要注意，输入的字母和汉字之间是 `tab`，而不是空格
   
   所以请使用不会自动替换`tab`为空格的编辑器修改此文件
 
-  ### 4、emoji 无法显示
+  ### 4、emoji 无法显示？
   **已解决**，下载除字体外的所有文件，然后重新部署
 
   eomji 字符文件都在 `opencc` 文件夹中。
 
-  ### 5、如何让鼠须管在软件中默认英文
+  ### 5、如何让鼠须管在软件中默认英文？
   在`/User/你的用户名/Library/Preferences/`中找到你需要添加的软件名称
 
   `squirrel.custom.yaml`文件中`app_options`下，照葫芦画瓢添加
 
   重新部署
 
-  ### 6、如何自定义符号
+  ### 6、如何自定义符号？
   如打下`\`，希望上屏哪些字符，都可自定义，在`double_pinyin_flypy.custom.yaml`文件中`punctuator`部分
 
   参照`symbols.yaml`修改(不建议修改`symbols.yaml`)
@@ -80,14 +81,11 @@
   **已解决**
   替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
 
-  然后重新部署
+  重新部署
 
   ## 待完善
   下一步计划重新做一下词库，不过现在的词库也还可以了
 
-
-
-  **希望有能力的大佬解决一下**，万分感谢
   
 
   
