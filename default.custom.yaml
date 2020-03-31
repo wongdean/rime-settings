@@ -1,8 +1,8 @@
 patch:
   schema_list:
     - schema: double_pinyin_flypy
-    - schema: luna_pinyin_simp
-    #- schema: luna_pinyin
+    #- schema: luna_pinyin_simp
+    - schema: luna_pinyin
   switcher/hotkeys:
     - "Control+grave" # 注意是control+`，不是command+`
   switcher/save_options:
