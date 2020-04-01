@@ -31,13 +31,14 @@ macOS Mojave	macos	3
 macOS	macos	4
 macOS Sierra	macos	1
 Google Analytics	ga
+macOS	macos
 CSS	css
 HTML html
 iOS	ios
 iPad	ipad
 iPhone	iphone
 iTunes	itunes
-JavaScript	js
+JavaScript js
 TypeScript ts
 jQuery	jquery
 MySQL	mysql
@@ -53,7 +54,6 @@ Apple	apple
 U盘	upj
 GitHub	github
 iMac	imac
-iPad	ipad
 iPad	ipad
 iPhone	iphone
 iPod	ipod
@@ -73,3 +73,6 @@ Quantumult	quan
 Dropbox	dropbox
 T恤	txu
 Mac	mac
+Wi-Fi	wifi
+Apple ID	appleid
+QQ邮箱	qqyzxl
