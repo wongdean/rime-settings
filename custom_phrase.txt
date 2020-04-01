@@ -38,6 +38,7 @@ iPad	ipad
 iPhone	iphone
 iTunes	itunes
 JavaScript	js
+TypeScript ts
 jQuery	jquery
 MySQL	mysql
 SQL	sql
@@ -61,6 +62,7 @@ IPv4	ipv
 IPv6	ipv
 Mac App Store	mas
 OS X	osx
+GUN/Linux linux
 X-Ray	xray
 Xbox One	xbox
 Youku	youku
