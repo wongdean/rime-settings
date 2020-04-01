@@ -29,4 +29,22 @@ import_tables:
   - luna_pinyin.poetry
   - luna_pinyin.computer
   - luna_pinyin.place
-...
+  - luna_pinyin.acg
+  - luna_pinyin.anime
+  - luna_pinyin.base
+  - luna_pinyin.biaoqing
+  - luna_pinyin.classical
+  # - luna_pinyin.cn_en
+  - luna_pinyin.diet
+  # - luna_pinyin.english
+  - luna_pinyin.game
+  - luna_pinyin.gd
+  - luna_pinyin.hanyu
+  - luna_pinyin.idiom
+  - luna_pinyin.movie
+  - luna_pinyin.music
+  - luna_pinyin.name
+  - luna_pinyin.sgplus
+  - luna_pinyin.sgplus2
+  - luna_pinyin.shopping
+  - luna_pinyin.user

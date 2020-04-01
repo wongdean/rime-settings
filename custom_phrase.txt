@@ -26,6 +26,11 @@ Rime	rime	3
 ⇧	shift
 GBK	gbk
 UTF-8	utfba
+macOS High Sierra	macos	2
+macOS Mojave	macos	3
+macOS	macos	4
+macOS Sierra	macos	1
+Google Analytics	ga
 macOS	macos
 CSS	css
 HTML html
@@ -33,7 +38,8 @@ iOS	ios
 iPad	ipad
 iPhone	iphone
 iTunes	itunes
-JavaScript	js
+JavaScript js
+TypeScript ts
 jQuery	jquery
 MySQL	mysql
 SQL	sql
@@ -49,7 +55,6 @@ U盘	upj
 GitHub	github
 iMac	imac
 iPad	ipad
-iPad	ipad
 iPhone	iphone
 iPod	ipod
 IPTV	iptv
@@ -57,6 +62,7 @@ IPv4	ipv
 IPv6	ipv
 Mac App Store	mas
 OS X	osx
+GUN/Linux linux
 X-Ray	xray
 Xbox One	xbox
 Youku	youku
