@@ -10,9 +10,11 @@
   折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
 
   **macOS**
+
   ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
 
   **win 10**
+  
   ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
 
   ## 更新记录
