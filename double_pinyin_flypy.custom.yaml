@@ -21,10 +21,10 @@ patch:
     - table_translator@custom_phrase
   engine/filters:
     - simplifier@emoji_suggestion
-    #- simplifier@zh_simp
+    # - simplifier@zh_simp
     - simplifier
     - uniquifier
-    #- charset_filter@gbk
+    # - charset_filter@gbk
     #- single_char_filter
   engine/processors:
     - ascii_composer
@@ -46,28 +46,38 @@ patch:
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
-  punctuator:
+	punctuator:
     # import_preset: default
+		full_shape:
+      '@': { cmmit: '＠' }
+      '%': ['％', '÷', '‰']
+      '#': { commit: '＃' }
     half_shape:
-      ',' : { commit: ， }
-      '.' : { commit: 。 }
-      '^' : { commit: …… }
-      '!' : { commit: ！ }
-      '"' : { pair: [ '“', '”' ] }
-      '?' : { commit: ？ }
-      ';' : { commit: ； }
-      ':' : { commit: ： }
-      '~' : ～
-      '\' : 、
-      '#' : '#'
-      '*' : '*'
-      '@' : '@'
-      '{' : [ 『, 〖, ｛ ]
-      '}' : [ 』, 〗, ｝ ]
-      "$" : ["¥", "$", "€", "£", "¢", "¤"]
-      "<" : ["《", "〈", "«", "<"]
-      ">" : ["》", "〉", "»", ">"]
-
+      "'": { pair: ['‘', '’'] }
+      '"': { pair: ['“', '”'] }
+      '\': ['、', '＼']
+      '?': { commit: '？' }
+      '/': { commit: '／' }
+      '^': ['…', '＾']
+      '.': ['。', '．']
+      ',': { commit: '，' }
+      ':': { commit: '：' }
+      ';': { commit: '；' }
+      '~': { commit: '～' }
+      '<': ['《', '〈']
+      '>': ['》', '〉']
+      '!': { commit: '！' }
+      '-': { commit: '─' }
+      '*': ['＊', '※', '×']
+      '`': ['｀', '·', '†', '‡']
+      '|': ['｜', '‖', '¦']
+      '[': ['【', '〔']
+      ']': ['】', '〕']
+      '}': ['」', '』', '｝']
+      '{': ['「', '『', '｛']
+      '(': { commit: '（' }
+      ')': { commit: '）' }
+      '$': ['¥', '＄', '§']
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #標點

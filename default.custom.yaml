@@ -11,7 +11,7 @@ patch:
     - simplification
     - zh_hans
     - emoji_suggestion
-  menu/page_size: 8
+  menu/page_size: 9
   ascii_composer: # 设置caps、shift、control等键的作用
     good_old_caps_lock: true # 若为true，caps只切换大小写
     switch_key:
@@ -42,8 +42,8 @@ patch:
     # - {accept: "Control+bracketleft", send: Escape, when: composing}
     # - { when: has_menu, accept: semicolon, send: 2 }
     # - { when: has_menu, accept: apostrophe, send: 3 }
-    # - {accept: comma, send: Page_Up, when: paging}
-    # - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
     # - {accept: "Control+Shift+1", select: .next, when: always}
     # - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
     # - {accept: "Control+Shift+3", toggle: full_shape, when: always}
