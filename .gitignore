@@ -4,3 +4,5 @@
 /build/*
 /user.yaml
 /installation.yaml
+/sync/*
+/trash/*
