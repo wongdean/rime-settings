@@ -8,15 +8,17 @@
   ----
   
   折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
+
   **macOS**
   ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
+
   **win 10**
   ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
 
   ## 更新记录
-  2020.03.31 主要问题修复，在当前平台上测试没有「大BUG」
-  2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
-  2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
+  - 2020.03.31 主要问题修复，在当前平台上测试没有「大BUG」
+  - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
+  - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
 
   -----
 
