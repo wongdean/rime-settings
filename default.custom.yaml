@@ -10,7 +10,7 @@ patch:
     - ascii_punct
     - simplification
     - zh_hans
-    - emoji_suggestion
+    - emoji_suggestion # 如果不需要表情，注释此行
   menu/page_size: 8
   ascii_composer: # 设置caps、shift、control等键的作用
     good_old_caps_lock: true # 若为true，caps只切换大小写
