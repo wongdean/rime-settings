@@ -9,5 +9,5 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.yaml]
-indent_style = tab
+indent_style = space
 indent_size = 2

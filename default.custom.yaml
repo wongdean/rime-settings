@@ -6,7 +6,7 @@ patch:
   switcher/hotkeys:
     - "Control+grave" # 注意是control+`，不是command+`
   switcher/save_options:
-    - full_shape
+    # - full_shape
     - ascii_punct
     - simplification
     - zh_hans

@@ -62,7 +62,7 @@ IPv4	ipv
 IPv6	ipv
 Mac App Store	mas
 OS X	osx
-GUN/Linux linux
+Linux linux
 X-Ray	xray
 Xbox One	xbox
 Youku	youku

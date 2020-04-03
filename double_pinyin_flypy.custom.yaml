@@ -46,38 +46,6 @@ patch:
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
-  punctuator:
-    # import_preset: default
-		# full_shape:
-    #   '@': { cmmit: '＠' }
-    #   '%': ['％', '÷', '‰']
-    #   '#': { commit: '＃' }
-    half_shape:
-      "'": { pair: ['‘', '’'] }
-      '"': { pair: ['“', '”'] }
-      '\': ['、', '＼']
-      '?': { commit: '？' }
-      '/': { commit: '／' }
-      '^': ['…', '＾']
-      '.': ['。', '．']
-      ',': { commit: '，' }
-      ':': { commit: '：' }
-      ';': { commit: '；' }
-      '~': { commit: '～' }
-      "<": ["《", "〈", "«", "<"]
-      ">": ["》", "〉", "»", ">"]
-      '!': { commit: '！' }
-      '-': { commit: '─' }
-      '*': ['＊', '※', '×']
-      '`': ['｀', '·', '†', '‡']
-      '|': ['｜', '‖', '¦']
-      '[': ['【', '〔']
-      ']': ['】', '〕']
-      '}': ['」', '』', '｝']
-      '{': ['「', '『', '｛']
-      '(': { commit: '（' }
-      ')': { commit: '）' }
-      "$" : ["¥", '＄', '§', "$", "€", "£", "¢", "¤"]
 
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
