@@ -138,7 +138,7 @@ patch:
     - script_translator
     - table_translator@custom_phrase
   engine/filters:
-    - simplifier@emoji_suggestion
+    - simplifier@emoji_suggestion # 不需要表情的注释这一行
     #- simplifier@zh_simp
     - simplifier
     - uniquifier
@@ -159,6 +159,8 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
+
+  # 不需要表情的注释下面三行
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion

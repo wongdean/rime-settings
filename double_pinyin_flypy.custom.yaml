@@ -41,6 +41,8 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
+
+  # 不需要表情的注释下面三行
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion

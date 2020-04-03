@@ -1,5 +1,5 @@
 # Rime 鼠须管输入法傻瓜式配置指南
-  OS: macOS 10.14.6
+  OS: macOS 10.14.6, Windows 10 LSTC 2019
   
   version: 0.14.0
   
@@ -8,7 +8,22 @@
   ----
   
   折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
-  ![](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
+
+  **macOS**
+
+  ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
+
+  **win 10**
+  
+  ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
+
+  ## 更新记录
+  - 2020.03.31 主要问题修复，在当前平台上测试没有「大BUG」
+  - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
+  - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
+
+  -----
+
 
   
   ## 用法
@@ -36,18 +51,22 @@
   
   注意更改快捷输入对应的全拼内容
 
+  ----
+
   ## 几个你可能会关注的问题
   ### 1、怎么修改输入法皮肤？
   `squirrel.custom.yaml` 文件，写了简单的注释。
 
   如果看不懂，请参考 https://mritd.me/2019/03/23/oh-my-rime/ 第四部分
 
-  ### 2、怎么拓展词库？
-  将你的词库文件(注意词库格式)拷贝到文件夹，修改 `luna_pinyin.extended.dict.yaml`文件
+  ### 2、编辑拓展词库？
+  将词库文件拷贝到文件夹，修改 `luna_pinyin.extended.dict.yaml`文件
 
-  将词库的名字加在 `import_tables` 下(依然要注意格式)
+  将词库名字加在 `import_tables` 下(注意格式)
 
   重新部署即可
+
+  **默认没有启用那么多的词库，如有需要请至上述文件中取消注释即可**
   
   ### 3、怎么添加自造词？
   添加至`custom_phrase.txt`文件中
@@ -56,10 +75,14 @@
   
   所以请使用不会自动替换`tab`为空格的编辑器修改此文件
 
-  ### 4、emoji 无法显示？
+  ### 4、emoji 无法显示？如何取消表情？
   **已解决**，下载除字体外的所有文件，然后重新部署
 
   eomji 字符文件都在 `opencc` 文件夹中。
+
+  已知 windows 显示的表情是黑白的，没有办法解决。
+
+  如果不需要表情，修改`default.custom.yaml`，`double_pinyin_flypy.custom.yaml`和`luna_pinyin.custom.yaml`（有注释）
 
   ### 5、如何让鼠须管在软件中默认英文？
   在`/User/你的用户名/Library/Preferences/`中找到你需要添加的软件名称
@@ -79,16 +102,23 @@
   -----
 
   ## 已知问题
-  ~~**中文状态下，无法打出「-」**~~
+  - ~~**中文状态下，无法打出「-」**~~
   **已解决**
   
   有此问题的，替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
+
+  - **windows 输入法皮肤部分特性不支持**
+  - **windows emoji 黑白无彩色**
 
 
   -----
 
   ## 待完善
-  下一步计划重新做一下词库，不过现在的词库也还可以了
+  下一步计划重新做词库，将最新的热词更新一些进去。
+
+  词库数量太大会拖慢输入法速度，如无必要，不准备添加长句进词库中。
+
+  **如果有大佬有比较好的建议或现成词库，欢迎提 issue 或提 PR**
 
   
   ------
