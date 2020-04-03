@@ -1,7 +1,7 @@
 patch:
   # 通知栏显示方式以及 ascii_mode 应用，与外观无关
   show_notifications_via_notification_center: true
-
+  us_keyboard_layout: true
   # 以下软件默认英文模式
   app_options:
     com.apple.dt.Xcode:
@@ -50,11 +50,11 @@ patch:
       ascii_mode: true
     com.eusoft.eudic:
       ascii_mode: true
-      
+
 
 # 如果想要修改皮肤，直接更改 color_scheme 的值即可
   style:
-    color_scheme: apathy
+    color_scheme: mingcheng
 
   preset_color_schemes:
     mojave_dark:
@@ -306,3 +306,11 @@ patch:
       hilited_text_color: 0xfecb96
       name: "星際我爭霸／StarCraft"
       text_color: 0xccaa88
+    mingcheng:
+      corner_radius: 5
+      font_face: 'Sarasa Mono SC Light,PingFang SC Light'
+      font_point: 20
+      horizontal: true
+      inline_preedit: true
+      line_spacing: 5
+      spacing: 10
