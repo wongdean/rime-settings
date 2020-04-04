@@ -3,7 +3,7 @@
   
   version: 0.14.0
   
-  Date:2020-03-31
+  Date:2020-04-04
   
   ----
   
@@ -14,13 +14,14 @@
   ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
 
   **win 10**
-  
+
   ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
 
   ## 更新记录
-  - 2020.03.31 主要问题修复，在当前平台上测试没有「大BUG」
+  - 2020.03.31 主要问题修复，在 macOS Majave 上测试没有「大BUG」
   - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
   - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
+  - 2020.04.04 1、删掉了`luna_pinyin.dict.yaml`，其中有些词库有点问题（删掉好像没啥影响），如打“复制”一词，无效;2、优化了部分符号上屏情况，增加了逗号句号翻页的功能。依然感谢 [@mingcheng](https://github.com/mingcheng)
 
   -----
 
@@ -91,10 +92,10 @@
 
   重新部署
 
-  ### 6、如何自定义符号？
-  如打下`\`，希望上屏哪些字符，都可自定义，在`double_pinyin_flypy.custom.yaml`文件中`punctuator`部分
+  ### 6、如何自定义符号上屏情况？
+  按下标点按键后，希望上屏哪些字符。在`double_pinyin_flypy.custom.yaml`文件中`punctuator`部分
 
-  参照`symbols.yaml`修改(不建议修改`symbols.yaml`)
+  参照`symbols.yaml`修改(不建议直接修改`symbols.yaml`)
 
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。

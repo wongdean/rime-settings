@@ -306,3 +306,11 @@ patch:
       hilited_text_color: 0xfecb96
       name: "星際我爭霸／StarCraft"
       text_color: 0xccaa88
+    mingcheng:
+      corner_radius: 5
+      font_face: 'Sarasa Mono SC Light,PingFang SC Light'
+      font_point: 20
+      horizontal: true
+      inline_preedit: true
+      line_spacing: 5
+      spacing: 10
