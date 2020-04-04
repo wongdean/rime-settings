@@ -17,7 +17,7 @@
 
   ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
 
-  Table of Contents
+  目录
 =================
 
 * [Rime 鼠须管输入法傻瓜式配置指南](#rime-%E9%BC%A0%E9%A1%BB%E7%AE%A1%E8%BE%93%E5%85%A5%E6%B3%95%E5%82%BB%E7%93%9C%E5%BC%8F%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97)
@@ -29,7 +29,7 @@
     * [1、怎么修改输入法皮肤？](#1%E6%80%8E%E4%B9%88%E4%BF%AE%E6%94%B9%E8%BE%93%E5%85%A5%E6%B3%95%E7%9A%AE%E8%82%A4)
     * [2、编辑拓展词库？](#2%E7%BC%96%E8%BE%91%E6%8B%93%E5%B1%95%E8%AF%8D%E5%BA%93)
     * [3、怎么添加自造词？](#3%E6%80%8E%E4%B9%88%E6%B7%BB%E5%8A%A0%E8%87%AA%E9%80%A0%E8%AF%8D)
-    * [4、emoji 无法显示？如何取消表情？](#4emoji-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%A6%82%E4%BD%95%E5%8F%96%E6%B6%88%E8%A1%A8%E6%83%85)
+    * [emoji 的相关问题](#4emoji-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%A6%82%E4%BD%95%E5%8F%96%E6%B6%88%E8%A1%A8%E6%83%85)
     * [5、如何让鼠须管在软件中默认英文？](#5%E5%A6%82%E4%BD%95%E8%AE%A9%E9%BC%A0%E9%A1%BB%E7%AE%A1%E5%9C%A8%E8%BD%AF%E4%BB%B6%E4%B8%AD%E9%BB%98%E8%AE%A4%E8%8B%B1%E6%96%87)
     * [6、如何自定义符号](#6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AC%A6%E5%8F%B7%E4%B8%8A%E5%B1%8F%E6%83%85%E5%86%B5)
   * [已知问题](#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98)
@@ -68,8 +68,9 @@
   配置文件中大部分都有注释。
 
   ## 全拼用户
-  Mac 用户使用 <code>Ctrl + &#96;</code> (`Tab`键上面那个),切换至拼音那一项
-  如果**表情不显示**，还使用 <code>Ctrl + &#96;</code> 更改“中/Y/半/汉"（可能是“中/N/半/汉"），第三项对应的是 emoji 的开关（可能指示的不准确）。
+  Mac 用户使用 <code>Ctrl + &#96;</code> (`Tab`上面那个),切换至拼音那一项
+  表情显示有问题参见：
+  * [emoji 不在候选中？emoji 显示方块？](#4emoji-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%A6%82%E4%BD%95%E5%8F%96%E6%B6%88%E8%A1%A8%E6%83%85)
   
   注意更改快捷输入对应的全拼内容
 
@@ -97,14 +98,16 @@
   
   所以请使用不会自动替换`tab`为空格的编辑器修改此文件
 
-  ### 4、emoji 无法显示？如何取消表情？
-  **已解决**，下载除字体外的所有文件，然后重新部署
+  ### 4、emoji 的相关问题
+  **emoji 显示方块**：下载除字体外的所有文件，然后重新部署，eomji 字符文件都在 `opencc` 文件夹中。
 
-  eomji 字符文件都在 `opencc` 文件夹中。
+  **emoji 不显示**：<code>Ctrl + &#96;</code> (`Tab`上面那个)选“中/Y/半/汉"（可能是“中/N/半/汉"），第三项对应的是 emoji 的开关（可能指示的不准确），切换一下开关即可。
 
-  已知 windows 显示的表情是黑白的，没有办法解决。
+  **不需要 emoji**：同**emoji 不显示**，emoji 开关切换一下即可
 
-  如果不需要表情，修改`default.custom.yaml`，`double_pinyin_flypy.custom.yaml`和`luna_pinyin.custom.yaml`（有注释）
+  **已知 windows 显示的表情是黑白的，没有办法解决。**
+
+  *如果彻底不需要表情，修改`default.custom.yaml`，`double_pinyin_flypy.custom.yaml`和`luna_pinyin.custom.yaml`（有注释）*
 
   ### 5、如何让鼠须管在软件中默认英文？
   在`/User/你的用户名/Library/Preferences/`中找到你需要添加的软件名称
