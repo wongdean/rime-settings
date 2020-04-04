@@ -7,7 +7,7 @@ patch:
       states: [ 中文, 西文 ]
     - name: emoji_suggestion
       reset: 1
-      states: [ "Yes", "No" ]
+      states: [ "No", "Yes" ]
     - name: full_shape
       states: [ 半角, 全角 ]
     - name: simplification
@@ -48,6 +48,27 @@ patch:
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
+  punctuator:
+    # 如果修改标点上屏情况，建议在此处自定义
+    # half_shape:
+    #   ',' : { commit: ， }
+    #   '.' : { commit: 。 }
+    #   '^' : { commit: …… }
+    #   '!' : { commit: ！ }
+    #   '"' : { pair: [ '“', '”' ] }
+    #   '?' : { commit: ？ }
+    #   ';' : { commit: ； }
+    #   ':' : { commit: ： }
+    #   '~' : ～
+    #   '\' : 、
+    #   '#' : '#'
+    #   '*' : '*'
+    #   '@' : '@'
+    #   '{' : [ 『, 〖, ｛ ]
+    #   '}' : [ 』, 〗, ｝ ]
+    #   "$" : ["¥", "$", "€", "£", "¢", "¤"]
+    #   "<" : ["《", "〈", "«", "<"]
+    #   ">" : ["》", "〉", "»", ">"]
 
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
