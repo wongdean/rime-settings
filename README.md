@@ -42,7 +42,9 @@
   - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
   - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
   - 2020.04.04 1、删掉了`luna_pinyin.dict.yaml`，其中有些词库有点问题（删掉好像没啥影响），如打“复制”一词，无效;2、优化了部分符号上屏情况，增加了逗号句号翻页的功能。依然感谢 [@mingcheng](https://github.com/mingcheng)
-  - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：https://github.com/SleepyBag/rime-zrm。ps:不用的方案请注释掉，在`default.custom.yaml`文件中，同理需要则自己手动启用，测试偶尔会串。如果串了就重新部署一下吧。
+  - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：https://github.com/SleepyBag/rime-zrm。
+
+  ps:不用的方案请注释掉，在`default.custom.yaml`文件中，同理需要则自己手动启用，测试偶尔会串。如果串了就重新部署一下吧。
 
   -----
 
@@ -136,6 +138,7 @@
 
   - **windows 输入法皮肤部分特性不支持**
   - **windows emoji 黑白无彩色**
+  上面两个问题，暂时无法解决，如果觉得丑就把表情关了吧！参见：https://github.com/rime/rime-emoji/issues/5
 
 
   -----
@@ -145,7 +148,7 @@
 
   词库数量太大会拖慢输入法速度，如无必要，不准备添加长句进词库中。
 
-  **如果有大佬有比较好的建议或现成词库，欢迎提 issue 或提 PR**
+  **如果有比较好的建议或词库，欢迎提 issue 或提 PR**
 
   
   ------
