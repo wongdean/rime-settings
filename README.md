@@ -31,7 +31,6 @@
   * [4、emoji 的相关问题](#4emoji-%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98)
   * [5、如何让鼠须管在软件中默认英文？](#5%E5%A6%82%E4%BD%95%E8%AE%A9%E9%BC%A0%E9%A1%BB%E7%AE%A1%E5%9C%A8%E8%BD%AF%E4%BB%B6%E4%B8%AD%E9%BB%98%E8%AE%A4%E8%8B%B1%E6%96%87)
   * [6、如何自定义符号上屏情况？](#6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AC%A6%E5%8F%B7%E4%B8%8A%E5%B1%8F%E6%83%85%E5%86%B5)
-* [如果你有其他问题，请开 issue，附上你的系统版本。](#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%9C%89%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E8%AF%B7%E5%BC%80-issue%E9%99%84%E4%B8%8A%E4%BD%A0%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC)
 * [已知问题](#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98)
 * [To do](#to-do)
 * [参考/致谢](#%E5%8F%82%E8%80%83%E8%87%B4%E8%B0%A2)
@@ -42,9 +41,7 @@
   - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
   - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
   - 2020.04.04 1、删掉了`luna_pinyin.dict.yaml`，其中有些词库有点问题（删掉好像没啥影响），如打“复制”一词，无效;2、优化了部分符号上屏情况，增加了逗号句号翻页的功能。依然感谢 [@mingcheng](https://github.com/mingcheng)
-  - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：https://github.com/SleepyBag/rime-zrm。
-
-  ps:不用的方案请注释掉，在`default.custom.yaml`文件中，同理需要则自己手动启用，测试偶尔会串。如果串了就重新部署一下吧。
+  - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：[Rim-zrm](https://github.com/SleepyBag/rime-zrm). ps:不用的方案请注释掉，在`default.custom.yaml`文件中，需要的方案则自己手动启用，测试不同双拼方案偶尔会串。如果串了就重新部署一下吧。
 
   -----
 
@@ -138,7 +135,8 @@
 
   - **windows 输入法皮肤部分特性不支持**
   - **windows emoji 黑白无彩色**
-  上面两个问题，暂时无法解决，如果觉得丑就把表情关了吧！参见：https://github.com/rime/rime-emoji/issues/5
+  
+  上面两个问题，暂时无法解决，如果觉得丑就把表情关了吧！参见：[rime-emoji](https://github.com/rime/rime-emoji/issues/5)
 
 
   -----
