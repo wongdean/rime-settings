@@ -22,19 +22,13 @@ use_preset_vocabulary: true
 import_tables:
   - luna_pinyin
   - luna_pinyin.extra_hanzi
-  - luna_pinyin.sgmain
+  - luna_pinyin.sougou
+  - luna_pinyin.hotwords
+  - luna_pinyin.psychology
+  - luna_pinyin.it
   - luna_pinyin.chat
-  - luna_pinyin.net
-  - luna_pinyin.website
-  - luna_pinyin.poetry
-  - luna_pinyin.computer
+  - luna_pinyin.poem
   - luna_pinyin.place
-  - luna_pinyin.biaoqing
-  #- luna_pinyin.cn_en
-  #- luna_pinyin.english
-  - luna_pinyin.movie
-  - luna_pinyin.music
-  - luna_pinyin.name
-  #- luna_pinyin.sgplus
-  #- luna_pinyin.sgplus2
-  - luna_pinyin.shopping
+  - luna_pinyin.beauty
+  - luna_pinyin.medical
+...
