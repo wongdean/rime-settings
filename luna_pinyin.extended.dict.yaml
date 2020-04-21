@@ -21,14 +21,14 @@ use_preset_vocabulary: true
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
 import_tables:
   - luna_pinyin
-  - luna_pinyin.extra_hanzi
-  - luna_pinyin.sougou
-  - luna_pinyin.hotwords
-  - luna_pinyin.psychology
-  - luna_pinyin.it
+  - luna_pinyin.sgmain
+  - luna_pinyin.sgplus
+  - luna_pinyin.sgplus2
   - luna_pinyin.chat
-  - luna_pinyin.poem
+  - luna_pinyin.computer
   - luna_pinyin.place
-  - luna_pinyin.beauty
-  - luna_pinyin.medical
+  - luna_pinyin.shopping
+  - luna_pinyin.net
+  - luna_pinyin.website
+  - luna_pinyin.poetry
 ...
