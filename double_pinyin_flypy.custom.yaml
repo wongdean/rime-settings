@@ -20,7 +20,7 @@ patch:
     - script_translator
     - table_translator@custom_phrase
   engine/filters:
-    - simplifier@emoji_suggestion # 不需要表情的注释这一行
+    - simplifier@emoji_suggestion
     #- simplifier@zh_simp
     - simplifier
     - uniquifier
@@ -41,41 +41,39 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
-
-  # 不需要表情的注释下面三行
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
   punctuator:
-    # 如果修改标点上屏情况，建议在此处自定义
-    # half_shape:
-    #   ',' : { commit: ， }
-    #   '.' : { commit: 。 }
-    #   '^' : { commit: …… }
-    #   '!' : { commit: ！ }
-    #   '"' : { pair: [ '“', '”' ] }
-    #   '?' : { commit: ？ }
-    #   ';' : { commit: ； }
-    #   ':' : { commit: ： }
-    #   '~' : ～
-    #   '\' : 、
-    #   '#' : '#'
-    #   '*' : '*'
-    #   '@' : '@'
-    #   '{' : [ 『, 〖, ｛ ]
-    #   '}' : [ 』, 〗, ｝ ]
-    #   "$" : ["¥", "$", "€", "£", "¢", "¤"]
-    #   "<" : ["《", "〈", "«", "<"]
-    #   ">" : ["》", "〉", "»", ">"]
+    import_preset: default
+    half_shape:
+      ',' : { commit: ， }
+      '.' : { commit: 。 }
+      '^' : { commit: …… }
+      '!' : { commit: ！ }
+      '"' : { pair: [ '“', '”' ] }
+      '?' : { commit: ？ }
+      ';' : { commit: ； }
+      ':' : { commit: ： }
+      '~' : ～
+      '\' : 、
+      '#' : '#'
+      '*' : '*'
+      '@' : '@'
+      '{' : [ 『, 〖, ｛ ]
+      '}' : [ 』, 〗, ｝ ]
+      "$" : ["¥", "$", "€", "£", "¢", "¤"]
+      "<" : ["《", "〈", "«", "<"]
+      ">" : ["》", "〉", "»", ">"]
 
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
+  'translator/preedit_format': {} 
   #標點
-  'punctuator/import_preset': symbols
+  # 'punctuator/import_preset': symbols
   'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
-  'translator/preedit_format': {}
   # translator/enable_correction: true
 
   ### 双拼使用自定义词典 custom_phrase.txt

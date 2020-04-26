@@ -125,7 +125,7 @@ patch:
       states: [ 中文, 西文 ]
     - name: emoji_suggestion
       reset: 1
-      states: [ "No", "Yes" ]
+      states: [ "Yes", "No" ]
     - name: full_shape
       states: [ 半角, 全角 ]
     - name: simplification
@@ -138,7 +138,7 @@ patch:
     - script_translator
     - table_translator@custom_phrase
   engine/filters:
-    - simplifier@emoji_suggestion # 不需要表情的注释这一行
+    - simplifier@emoji_suggestion
     #- simplifier@zh_simp
     - simplifier
     - uniquifier
@@ -159,15 +159,13 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
-
-  # 不需要表情的注释下面三行
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
   punctuator:
-    # import_preset: default
+    import_preset: default
     half_shape:
       ',' : { commit: ， }
       '.' : { commit: 。 }
@@ -188,9 +186,13 @@ patch:
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
 
+  #載入朙月拼音擴充詞庫
+  "translator/dictionary": luna_pinyin.extended
+  'translator/preedit_format': {} 
   #標點
-  'punctuator/import_preset': symbols
+  # 'punctuator/import_preset': symbols
   'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
+  # translator/enable_correction: true
 
   # 自定义词库
   custom_phrase:
