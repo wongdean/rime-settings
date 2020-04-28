@@ -138,7 +138,8 @@
   参照`symbols.yaml`修改(不建议直接修改`symbols.yaml`)
 
   ### 7、提供网盘下载
-  还是推荐直接从git下载，因为网盘的版本可能会滞后
+  还是推荐直接从git下载，因为网盘的版本可能会滞后。
+  
   链接：https://pan.baidu.com/s/1MfpYYQ6K6bjj7_GmVwJwRw 提取码：018D 
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
