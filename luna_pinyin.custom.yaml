@@ -28,7 +28,8 @@
 patch:    
   # 載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
-  # 改寫拼寫運算，使得含西文的詞彙（位於 luna_pinyin.cn_en.dict.yaml 中）不影響簡拼功能（注意，此功能只適用於朙月拼音系列方案，不適用於各類雙拼方案）
+  #  拼写纠错
+  "translator/enable_correction": true
   # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
   #"switches/@0/reset": 1  #表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
@@ -163,9 +164,8 @@ patch:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
-  reverse_lookup: {}
   punctuator:
-    import_preset: default
+    import_preset: symbols
     half_shape:
       ',' : { commit: ， }
       '.' : { commit: 。 }
@@ -185,14 +185,14 @@ patch:
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
-
-  #載入朙月拼音擴充詞庫
-  "translator/dictionary": luna_pinyin.extended
-  'translator/preedit_format': {} 
-  #標點
-  # 'punctuator/import_preset': symbols
-  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
-  # translator/enable_correction: true
+    recognizer:
+      # import_preset: default
+      patterns:
+        # reverse_lookup: 
+        punct: "^/([0-9]0?|[A-Za-z]+)$"
+        html: "^<[a-z]+>$"
+        code: "[a-zA-Z]+(*$"
+        url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
 
   # 自定义词库
   custom_phrase:
@@ -203,3 +203,10 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+  easy_en/enable_sentence: false
+
+__patch:
+# Rx: BlindingDark/rime-easy-en:customize:schema=luna_pinyin {
+  - patch/+:
+      __include: easy_en:/patch
+# }

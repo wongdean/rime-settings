@@ -3,7 +3,7 @@
   
   version: 0.14.0
   
-  Date:2020-04-28
+  Date:2020-05-03
   
   ----
   
@@ -53,6 +53,17 @@
   - ~~2020.04.20 重新做了词库，这个版本的词库是从搜狗词库里挑的，相比较之前的词库，去除了不少冗余的，打字准确率也高了不少，很不错～文件后缀为`.dict.yaml`的都重新下载，覆盖即可。~~
   - 2020.04.21 昨天的词库有点问题，恢复以前的词库。。。
   - 2020.04.26 修复全拼不显示 emoji，增加[网盘下载入口](#7%E6%8F%90%E4%BE%9B%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD)
+  - 2020.05.03 感谢[@ayalhw](https://github.com/ayalhw)建议，为方便中英文混合输入，引入了[easy-en](https://github.com/BlindingDark/rime-easy-en)方案，如果不需要此方案，将
+  ```
+    easy_en/enable_sentence: false
+
+  __patch:
+  # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy {
+    - patch/+:
+        __include: easy_en:/patch
+  # }
+  ```
+  几行注释即可。
 
   -----
 
@@ -175,5 +186,6 @@
   2. [鼠须管 0.11 Mac 升级重装配置 2019](https://github.com/cnfeat/Rime)
   3. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
   4. [Schema.yaml 詳解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
+  5. [easy-en](https://github.com/BlindingDark/rime-easy-en)
   
   

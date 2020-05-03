@@ -1,7 +1,6 @@
 # Rime schema
 # encoding: utf-8
 patch:
-  schema/dependencies: {}
   schema/name: 自然码
   switches:
     - name: ascii_mode
@@ -47,9 +46,8 @@ patch:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
-  reverse_lookup: {}
   punctuator:
-    # import_preset: default
+    import_preset: symbols
     half_shape:
       ',' : { commit: ， }
       '.' : { commit: 。 }
@@ -61,6 +59,10 @@ patch:
       ':' : { commit: ： }
       '~' : ～
       '\' : 、
+      '`': '`'
+      '=': '='
+      '/': ['/', '÷']
+      '_' : '──'
       '#' : '#'
       '*' : '*'
       '@' : '@'
@@ -69,13 +71,18 @@ patch:
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
+    recognizer:
+      import_preset: default
+      patterns:
+        punct: "^/([0-9]0?|[A-Za-z]+)$"
+        html: "^<[a-z]+>$"
+        code: "[a-zA-Z]+(*$"
+        url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
 
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #標點
-  'punctuator/import_preset': symbols
-  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
-  'translator/preedit_format': {}
+  'translator/preedit_format': []
   # translator/enable_correction: true
 
   ### 双拼使用自定义词典 custom_phrase.txt
@@ -87,3 +94,11 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+  easy_en/enable_sentence: false # 中英文混输的设置
+
+# 中英文混输的设置
+__patch:
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin {
+  - patch/+:
+      __include: easy_en:/patch
+# }

@@ -1,5 +1,4 @@
 patch:
-  schema/dependencies: {}
   schema/name: 小鹤双拼
   switches:
     - name: ascii_mode
@@ -25,7 +24,7 @@ patch:
     - simplifier
     - uniquifier
     #- charset_filter@gbk
-    #- single_char_filter
+    # - single_char_filter
   engine/processors:
     - ascii_composer
     - recognizer
@@ -45,9 +44,15 @@ patch:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
-  reverse_lookup: {}
+
+  #載入朙月拼音擴充詞庫
+  "translator/dictionary": luna_pinyin.extended
+  # "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
+  'translator/preedit_format': {}
+
+  # reverse_lookup: {}
   punctuator:
-    import_preset: default
+    import_preset: symbols
     half_shape:
       ',' : { commit: ， }
       '.' : { commit: 。 }
@@ -59,6 +64,10 @@ patch:
       ':' : { commit: ： }
       '~' : ～
       '\' : 、
+      '`': '`'
+      '=': '='
+      '/': ['/', '÷']
+      '_' : '──'
       '#' : '#'
       '*' : '*'
       '@' : '@'
@@ -67,14 +76,13 @@ patch:
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
-
-  #載入朙月拼音擴充詞庫
-  "translator/dictionary": luna_pinyin.extended
-  'translator/preedit_format': {} 
-  #標點
-  # 'punctuator/import_preset': symbols
-  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
-  # translator/enable_correction: true
+    recognizer:
+      import_preset: default
+      patterns:
+        punct: "^/([0-9]0?|[A-Za-z]+)$"
+        html: "^<[a-z]+>$"
+        code: "[a-zA-Z]+(*$"
+        url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
 
   ### 双拼使用自定义词典 custom_phrase.txt
   custom_phrase:
@@ -85,3 +93,10 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+  easy_en/enable_sentence: false
+
+__patch:
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy {
+  - patch/+:
+      __include: easy_en:/patch
+# }
