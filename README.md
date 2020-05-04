@@ -15,7 +15,7 @@
   4. 配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux 平台未测试
 
 
-  ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.png)
+  ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.jpg)
 
 
   ## 注意！！！
