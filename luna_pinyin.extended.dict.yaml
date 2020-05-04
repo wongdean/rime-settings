@@ -16,6 +16,7 @@
 name: luna_pinyin.extended
 version: "2014.09.07"
 sort: by_weight
+# vocabulary: essay
 use_preset_vocabulary: true
 #下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库。
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。

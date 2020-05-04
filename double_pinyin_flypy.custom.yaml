@@ -20,7 +20,6 @@ patch:
     - table_translator@custom_phrase
   engine/filters:
     - simplifier@emoji_suggestion
-    #- simplifier@zh_simp
     - simplifier
     - uniquifier
     #- charset_filter@gbk
@@ -34,12 +33,6 @@ patch:
     - selector
     - navigator
     - express_editor
-  # engine/segmentors:
-  #   - ascii_segmentor
-  #   - matcher
-  #   - abc_segmentor
-  #   - punct_segmentor
-  #   - fallback_segmentor
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
@@ -47,7 +40,6 @@ patch:
 
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
-  # "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
   'translator/preedit_format': {}
 
   # reverse_lookup: {}
@@ -79,6 +71,7 @@ patch:
     recognizer:
       import_preset: default
       patterns:
+        reverse_lookup:
         punct: "^/([0-9]0?|[A-Za-z]+)$"
         html: "^<[a-z]+>$"
         code: "[a-zA-Z]+(*$"
@@ -93,10 +86,9 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
-  easy_en/enable_sentence: false
 
-__patch:
-# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy {
-  - patch/+:
-      __include: easy_en:/patch
-# }
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
+  __include: easy_en:/patch
+  easy_en/enable_sentence: false
+# Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
+  __include: grammar:/hant

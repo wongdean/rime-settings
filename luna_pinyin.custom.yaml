@@ -29,7 +29,7 @@ patch:
   # 載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #  拼写纠错
-  "translator/enable_correction": true
+  "translator/enable_correction": false
   # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
   #"switches/@0/reset": 1  #表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
@@ -186,9 +186,9 @@ patch:
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
     recognizer:
-      # import_preset: default
+      import_preset: default
       patterns:
-        # reverse_lookup: 
+        reverse_lookup: 
         punct: "^/([0-9]0?|[A-Za-z]+)$"
         html: "^<[a-z]+>$"
         code: "[a-zA-Z]+(*$"
@@ -203,10 +203,9 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
-  easy_en/enable_sentence: false
 
-__patch:
-# Rx: BlindingDark/rime-easy-en:customize:schema=luna_pinyin {
-  - patch/+:
-      __include: easy_en:/patch
-# }
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
+  __include: easy_en:/patch
+  easy_en/enable_sentence: false
+# Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
+  __include: grammar:/hant

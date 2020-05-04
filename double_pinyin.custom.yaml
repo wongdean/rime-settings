@@ -74,6 +74,7 @@ patch:
     recognizer:
       import_preset: default
       patterns:
+        reverse_lookup:
         punct: "^/([0-9]0?|[A-Za-z]+)$"
         html: "^<[a-z]+>$"
         code: "[a-zA-Z]+(*$"
@@ -82,7 +83,7 @@ patch:
   #載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #標點
-  'translator/preedit_format': []
+  'translator/preedit_format': {}
   # translator/enable_correction: true
 
   ### 双拼使用自定义词典 custom_phrase.txt
@@ -94,11 +95,8 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
+  __include: easy_en:/patch
   easy_en/enable_sentence: false # 中英文混输的设置
-
-# 中英文混输的设置
-__patch:
-# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin {
-  - patch/+:
-      __include: easy_en:/patch
-# }
+# Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
+  __include: grammar:/hant

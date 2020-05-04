@@ -3,19 +3,18 @@
   
   version: 0.14.0
   
-  Date:2020-05-03
+  Date:2020-05-04
   
   ----
   
-  折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
+  # 介绍
+  本仓库为 Rime 鼠须管输入法的配置文件，特点有：
+  1、简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
+  2、支持 emoji 候选，支持符号快捷输入，支持中英文混合输入
+  3、配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
+  4、配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux 平台未测试
 
-  **macOS**
-
-  ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
-
-  **win 10**
-
-  ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
+  ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/OgUS47.png)
 
 
   ## 注意！！！
@@ -53,17 +52,17 @@
   - ~~2020.04.20 重新做了词库，这个版本的词库是从搜狗词库里挑的，相比较之前的词库，去除了不少冗余的，打字准确率也高了不少，很不错～文件后缀为`.dict.yaml`的都重新下载，覆盖即可。~~
   - 2020.04.21 昨天的词库有点问题，恢复以前的词库。。。
   - 2020.04.26 修复全拼不显示 emoji，增加[网盘下载入口](#7%E6%8F%90%E4%BE%9B%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD)
-  - 2020.05.03 感谢[@ayalhw](https://github.com/ayalhw)建议，为方便中英文混合输入，引入了[easy-en](https://github.com/BlindingDark/rime-easy-en)方案，如果不需要此方案，将
-  ```
-    easy_en/enable_sentence: false
+  - 2020.05.03 感谢[@ayalhw](https://github.com/ayalhw)建议，为方便中英文混合输入，引入了[easy-en](https://github.com/BlindingDark/rime-easy-en)方案，如果不需要此方案，将对应方案的`custom.yaml`中的这几行注释掉即可：
+    ```
+      easy_en/enable_sentence: false
 
-  __patch:
-  # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy {
-    - patch/+:
-        __include: easy_en:/patch
-  # }
-  ```
-  几行注释即可。
+    __patch:
+    # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy {
+      - patch/+:
+          __include: easy_en:/patch
+    # }
+    ```
+  - 2020.05.04 整合官方的[『八股文』](https://github.com/lotem/rime-octagram-data)，替代 Rime 默认的词表和词频（应该是重新训练了语言模型，好处是输入更加准确一些）。可以试试「各个国家都有各个国家的国歌」、「充满希望的跋涉比到达目的地更能给人乐趣」（第二句可能有点困难，跟你的输入法有关）
 
   -----
 
@@ -158,11 +157,6 @@
   -----
 
   ## 已知问题
-  - ~~**中文状态下，无法打出「-」**~~
-  **已解决**
-  
-  有此问题的，替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
-
   - **windows 输入法皮肤部分特性不支持**
   - **windows emoji 黑白无彩色**
   
