@@ -9,12 +9,13 @@
   
   # 介绍
   本仓库为 Rime 鼠须管输入法的配置文件，特点有：
-  1、简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
-  2、支持 emoji 候选，支持符号快捷输入，支持中英文混合输入
-  3、配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
-  4、配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux 平台未测试
+  1. 简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
+  2. 支持 emoji 候选，支持符号快捷输入，支持中英文混合输入
+  3. 配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
+  4. 配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux 平台未测试
 
-  ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/OgUS47.png)
+
+  ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.png)
 
 
   ## 注意！！！
