@@ -12,7 +12,7 @@
   1. 简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
   2. 支持 emoji 候选，支持符号快捷输入，支持中英文混合输入
   3. 配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
-  4. 配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux 平台未测试
+  4. 配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux,功能上都没有问题。
 
 
   ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.jpg)
@@ -51,7 +51,7 @@
   - 2020.04.04 1、删掉了`luna_pinyin.dict.yaml`，其中有些词库有点问题（删掉好像没啥影响），如打“复制”一词，无效;2、优化了部分符号上屏情况，增加了逗号句号翻页的功能。依然感谢 [@mingcheng](https://github.com/mingcheng)
   - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：[Rim-zrm](https://github.com/SleepyBag/rime-zrm). ps:不用的方案请注释掉，在`default.custom.yaml`文件中，需要的方案则自己手动启用，测试不同双拼方案偶尔会串。如果串了就重新部署一下吧。
   - ~~2020.04.20 重新做了词库，这个版本的词库是从搜狗词库里挑的，相比较之前的词库，去除了不少冗余的，打字准确率也高了不少，很不错～文件后缀为`.dict.yaml`的都重新下载，覆盖即可。~~
-  - 2020.04.21 昨天的词库有点问题，恢复以前的词库。。。
+  - 2020.04.21 昨天的词库有点问题，恢复[rime-dict](https://github.com/xiaoTaoist/rime-dict)中的部分词库，有部分改动。
   - 2020.04.26 修复全拼不显示 emoji，增加[网盘下载入口](#7%E6%8F%90%E4%BE%9B%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD)
   - 2020.05.03 感谢[@ayalhw](https://github.com/ayalhw)建议，为方便中英文混合输入，引入了[easy-en](https://github.com/BlindingDark/rime-easy-en)方案，如果不需要此方案，将对应方案的`custom.yaml`中的这几行注释掉即可：
     ```
@@ -149,6 +149,8 @@
   参照`symbols.yaml`修改(不建议直接修改`symbols.yaml`)
 
   ### 7、提供网盘下载
+  热心老哥做了一个国内镜像，[gitee](https://gitee.com/Hoking/rime-settings)
+
   还是推荐直接从git下载，因为网盘的版本可能会滞后。
   
   链接：https://pan.baidu.com/s/1MfpYYQ6K6bjj7_GmVwJwRw 提取码：018D 
@@ -181,6 +183,7 @@
   2. [鼠须管 0.11 Mac 升级重装配置 2019](https://github.com/cnfeat/Rime)
   3. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
   4. [Schema.yaml 詳解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
-  5. [easy-en](https://github.com/BlindingDark/rime-easy-en)
+  5. [rime-dict](https://github.com/xiaoTaoist/rime-dict)
+  6. [easy-en](https://github.com/BlindingDark/rime-easy-en)
   
   
