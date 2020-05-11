@@ -185,14 +185,14 @@ patch:
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
-    recognizer:
-      import_preset: default
-      patterns:
-        reverse_lookup: 
-        punct: "^/([0-9]0?|[A-Za-z]+)$"
-        html: "^<[a-z]+>$"
-        code: "[a-zA-Z]+(*$"
-        url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
+  recognizer:
+    import_preset: default
+    patterns:
+      reverse_lookup: 
+      punct: "^/([0-9]0?|[A-Za-z]+)$"
+      html: "^<[a-z]+>$"
+      code: "[a-zA-Z]+(*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
 
   # 自定义词库
   custom_phrase:
@@ -205,6 +205,7 @@ patch:
   "engine/translators/@5": table_translator@custom_phrase
 
 # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
+# 取消英文候选输入，注释以下这两行
   __include: easy_en:/patch
   easy_en/enable_sentence: false
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
