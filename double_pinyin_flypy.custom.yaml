@@ -15,6 +15,8 @@ patch:
     - name: ascii_punct
       states: [ 。，, ．， ]
   engine/translators:
+    # - lua_translator@date_translator
+    # - lua_translator@week_translator
     - punct_translator
     - script_translator
     - table_translator@custom_phrase
@@ -37,12 +39,14 @@ patch:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
+  reverse_lookup: {}
 
   #載入朙月拼音擴充詞庫
-  "translator/dictionary": luna_pinyin.extended
+  'translator/dictionary': luna_pinyin.extended
   'translator/preedit_format': {}
 
-  # reverse_lookup: {}
+
+  # 自定义符号上屏
   punctuator:
     import_preset: symbols
     half_shape:
@@ -68,13 +72,11 @@ patch:
       "$" : ["¥", "$", "€", "£", "¢", "¤"]
       "<" : ["《", "〈", "«", "<"]
       ">" : ["》", "〉", "»", ">"]
+
   recognizer:
-    import_preset: symbols
     patterns:
-      reverse_lookup:
       punct: "^/([0-9]0?|[A-Za-z]+)$"
       html: "^<[a-z]+>$"
-      code: "[a-zA-Z]+(*$"
       url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]{1,10}[.:_-].*$"
 
   ### 双拼使用自定义词典 custom_phrase.txt
@@ -88,7 +90,6 @@ patch:
   "engine/translators/@5": table_translator@custom_phrase
 
 # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
-# 如果需要取消英文候选输入，注释以下这两行
   __include: easy_en:/patch
   easy_en/enable_sentence: false
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
