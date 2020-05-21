@@ -22,6 +22,7 @@ use_preset_vocabulary: true
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
 import_tables:
   - luna_pinyin
+  #- luna_pinyin.flypyfz #小鹤辅助码
   - luna_pinyin.sgmain
   - luna_pinyin.sgplus
   - luna_pinyin.sgplus2
