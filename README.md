@@ -7,9 +7,9 @@
   
   ----
 
-  > 遇到问题请查询 closed 的 issue，90%都已经得到了解决~
+  > 遇到问题请查询 closed 的 [issue](https://github.com/wongdean/rime-settings/issues?q=is%3Aissue+is%3Aclosed)，90%都已经得到了解决~
 
-  > 项目会随着 Rime 的更新而更新，希望能给您带来帮助~欢迎star~
+  > 项目会随着 Rime 的更新而更新，希望能给您带来帮助。欢迎star~
   
   > 如果有什么自定义方面的问题或者功能建议，也请提issue
   
