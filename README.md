@@ -66,7 +66,7 @@
     easy_en/enable_sentence: false
     ```
   - 2020.05.04 整合官方的[『八股文』](https://github.com/lotem/rime-octagram-data)，替代 Rime 默认的词表和词频（应该是重新训练了语言模型，好处是输入更加准确一些）。可以试试「各个国家都有各个国家的国歌」、「充满希望的跋涉比到达目的地更能给人乐趣」（第二句可能有点困难，跟你的输入法有关）
-  - **2020.11.15 1、更新词库，引用部分[@alswl](https://github.com/alswl/Rime)提供的细胞词库，以及[@thtfhsw](https://github.com/thtfhsw/rime-essay-creator)8万带词频的词典库。词库目前的标准是小而精，但也不能太小。由于Rime的特点（本地、不联网），目前的输入法还远远达不到联网输入法的精确度，词语的组合只能按照词频来。词库大小的限制，对于长句、长词，无法做到一次命中，这也是Rime最大的缺点了，也是非常难提升的点。如果长期使用Rime，自己养词库的话，这个缺点长期来看影响很小，毕竟输入法有记忆的功能。适当的配置加上符合自己的词库，Rime是一个非常棒的输入法。**2、引入lua选词拓展[ime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)。引用原项目的介绍：
+  - 2020.11.15 1、**更新词库**，引用部分[@alswl](https://github.com/alswl/Rime)提供的细胞词库，以及[@thtfhsw](https://github.com/thtfhsw/rime-essay-creator)8万带词频的词典库。词库目前的标准是小而精，但也不能太小。由于Rime的特点（本地、不联网），目前的输入法还远远达不到联网输入法的精确度，词语的组合只能按照词频来。词库大小的限制，对于长句、长词，无法做到一次命中，这也是Rime最大的缺点了，也是非常难提升的点。如果长期使用Rime，自己养词库的话，这个缺点长期来看影响很小，毕竟输入法有记忆的功能。适当的配置加上符合自己的词库，Rime是一个非常棒的输入法。2、引入lua选词拓展[rime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)。引用原项目的介绍：
   > 以词定字可以让你在输入一个词组后，选取这个词组的开头或结尾的一个字直接上屏，比如想要打“嫉”这个字，可以先打“嫉妒”再按 [ 键选择第一个字，这样在输入一些生僻字的时候会有所帮助。按 [ 键将会选中词组的第一个字，按 ] 键将会选中词组的最后一个字。
 
   -----
