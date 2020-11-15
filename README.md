@@ -189,5 +189,7 @@
   4. [Schema.yaml 詳解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
   5. [rime-dict](https://github.com/xiaoTaoist/rime-dict)
   6. [easy-en](https://github.com/BlindingDark/rime-easy-en)
+  7. [Rime](https://github.com/alswl/Rime)
+  8. [rime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)
   
   
