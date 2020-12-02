@@ -1,7 +1,5 @@
 # Rime table
 # coding: utf-8
-#@/db_name  custom_phrase.txt
-#@/db_type	tabledb
 #
 # 用於【朙月拼音】系列輸入方案
 # 【小狼毫】0.9.21 以上
@@ -32,6 +30,7 @@ macOS	macos	4
 macOS Sierra	macos	1
 Google Analytics	ga
 macOS	macos
+Linux	linux
 CSS	css
 HTML html
 iOS	ios
