@@ -28,7 +28,8 @@
 patch:    
   # 載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
-  # 改寫拼寫運算，使得含西文的詞彙（位於 luna_pinyin.cn_en.dict.yaml 中）不影響簡拼功能（注意，此功能只適用於朙月拼音系列方案，不適用於各類雙拼方案）
+  #  拼写纠错
+  "translator/enable_correction": false
   # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
   #"switches/@0/reset": 1  #表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
@@ -116,8 +117,8 @@ patch:
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
 
   # 分尖團後 v => ü 的改寫條件也要相應地擴充：
-  #'translator/preedit_format':
-  #  - "xform/([nljqxyzcs])v/$1ü/"
+  'translator/preedit_format':
+   - "xform/([nljqxyzcs])v/$1ü/"
 
   switches:
     - name: ascii_mode
@@ -125,7 +126,7 @@ patch:
       states: [ 中文, 西文 ]
     - name: emoji_suggestion
       reset: 1
-      states: [ "No", "Yes" ]
+      states: [ "Yes", "No" ]
     - name: full_shape
       states: [ 半角, 全角 ]
     - name: simplification
@@ -134,11 +135,13 @@ patch:
     - name: ascii_punct
       states: [ 。，, ．， ]
   engine/translators:
+    # - lua_translator@date_translator
+    # - lua_translator@week_translator
     - punct_translator
     - script_translator
     - table_translator@custom_phrase
   engine/filters:
-    - simplifier@emoji_suggestion # 不需要表情的注释这一行
+    - simplifier@emoji_suggestion
     #- simplifier@zh_simp
     - simplifier
     - uniquifier
@@ -159,38 +162,35 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
-
-  # 不需要表情的注释下面三行
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
   reverse_lookup: {}
+  
   punctuator:
-    # import_preset: default
+    import_preset: symbols
+    # 自定义快捷符号输入
+    # symbols:
+    #   "/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒ ]
     half_shape:
-      ',' : { commit: ， }
-      '.' : { commit: 。 }
-      '^' : { commit: …… }
-      '!' : { commit: ！ }
-      '"' : { pair: [ '“', '”' ] }
-      '?' : { commit: ？ }
-      ';' : { commit: ； }
-      ':' : { commit: ： }
-      '~' : ～
-      '\' : 、
-      '#' : '#'
-      '*' : '*'
-      '@' : '@'
-      '{' : [ 『, 〖, ｛ ]
-      '}' : [ 』, 〗, ｝ ]
-      "$" : ["¥", "$", "€", "£", "¢", "¤"]
-      "<" : ["《", "〈", "«", "<"]
-      ">" : ["》", "〉", "»", ">"]
+      "#": "#"
+      "*": "*"
+      "`": "`"
+      "~": "~"
+      "@": "@"
+      "=": "="
+      "/": ["/", "÷",]
+      '\': "、"
+      "_" : "──"
+      "'": {pair: ["「", "」"]}
+      "[": ["【", "["]
+      "]": ["】", "]"]
+      "$": ["¥", "$", "€", "£", "¢", "¤"]
+      "<": ["《", "〈", "«", "<"]
+      ">": ["》", "〉", "»", ">"]
 
-  #標點
-  'punctuator/import_preset': symbols
-  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
+  recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
 
   # 自定义词库
   custom_phrase:
@@ -201,3 +201,13 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+
+# Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
+  # __include: easy_en:/patch
+  # easy_en/enable_sentence: false
+# Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
+  __include: grammar:/hant
+# Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin {
+  __include: lua_select_character:/patch
+# }
+

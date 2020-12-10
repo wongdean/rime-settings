@@ -3,19 +3,33 @@
   
   version: 0.14.0
   
-  Date:2020-04-04
+  Date:2020-11-15
   
   ----
+
+  > 遇到问题请查询 closed 的 [issue](https://github.com/wongdean/rime-settings/issues?q=is%3Aissue+is%3Aclosed)，90%都已经得到了解决~
+
+  > 项目会随着 Rime 的更新而更新，希望能给您带来帮助。欢迎star~
   
-  折腾了一下 Rime 输入法，系统输入法太难用了。输入界面:
+  > 如果有什么自定义方面的问题或者功能建议，也请提issue
+  
 
-  **macOS**
+  # 介绍
+  本仓库为 Rime 鼠须管输入法的配置文件，特点有：
+  1. 简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
+  2. 支持 emoji 候选，支持符号快捷输入，支持中英文混合输入，支持`/`+关键词实现快捷输入
+  3. 配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
+  4. 配置文件支持 Rime 鼠须管0.14.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux,功能上都没有问题。
 
-  ![macOS](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/pic/2019-10-11-RoMhx5.png)
 
-  **win 10**
+  ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.jpg)
 
-  ![win 10](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rLU5Ff.png)
+
+  ## 注意！！！
+  如使用本方案，请全部下载覆盖然后重新加载（记得备份您原来的配置）
+  除非您对配置文件很熟悉，否则可能会出现各种问题，恕我无法一一排查
+
+  新建了一个Rime讨论群组：[电报群](https://t.me/rime_setting)
 
   目录
 =================
@@ -31,7 +45,7 @@
   * [4、emoji 的相关问题](#4emoji-%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98)
   * [5、如何让鼠须管在软件中默认英文？](#5%E5%A6%82%E4%BD%95%E8%AE%A9%E9%BC%A0%E9%A1%BB%E7%AE%A1%E5%9C%A8%E8%BD%AF%E4%BB%B6%E4%B8%AD%E9%BB%98%E8%AE%A4%E8%8B%B1%E6%96%87)
   * [6、如何自定义符号上屏情况？](#6%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AC%A6%E5%8F%B7%E4%B8%8A%E5%B1%8F%E6%83%85%E5%86%B5)
-* [如果你有其他问题，请开 issue，附上你的系统版本。](#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%9C%89%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E8%AF%B7%E5%BC%80-issue%E9%99%84%E4%B8%8A%E4%BD%A0%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC)
+  * [7、提供网盘下载](#7%E6%8F%90%E4%BE%9B%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD)
 * [已知问题](#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98)
 * [To do](#to-do)
 * [参考/致谢](#%E5%8F%82%E8%80%83%E8%87%B4%E8%B0%A2)
@@ -42,6 +56,18 @@
   - 2020.04.01 感谢 [@mingcheng](https://github.com/mingcheng) 提供的词库
   - 2020.04.02 上传了 Windows 的配置文件，经试验，macOS 皮肤的有些特性不支持，于是只加（chao）了一个 win10 输入法皮肤，有个性化需求的用户请自己定制（定制指南见后）
   - 2020.04.04 1、删掉了`luna_pinyin.dict.yaml`，其中有些词库有点问题（删掉好像没啥影响），如打“复制”一词，无效;2、优化了部分符号上屏情况，增加了逗号句号翻页的功能。依然感谢 [@mingcheng](https://github.com/mingcheng)
+  - 2020.04.06 添加了自然码方案（无辅助码），如需要辅助码，请参考：[Rim-zrm](https://github.com/SleepyBag/rime-zrm). ps:不用的方案请注释掉，在`default.custom.yaml`文件中，需要的方案则自己手动启用，测试不同双拼方案偶尔会串。如果串了就重新部署一下吧。
+  - ~~2020.04.20 重新做了词库，这个版本的词库是从搜狗词库里挑的，相比较之前的词库，去除了不少冗余的，打字准确率也高了不少，很不错～文件后缀为`.dict.yaml`的都重新下载，覆盖即可。~~
+  - 2020.04.21 昨天的词库有点问题，恢复[rime-dict](https://github.com/xiaoTaoist/rime-dict)中的部分词库，有部分改动。
+  - 2020.04.26 修复全拼不显示 emoji，增加[网盘下载入口](#7%E6%8F%90%E4%BE%9B%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD)
+  - 2020.05.03 感谢[@ayalhw](https://github.com/ayalhw)建议，为方便中英文混合输入，引入了[easy-en](https://github.com/BlindingDark/rime-easy-en)方案，如果不需要此方案，将对应方案的`custom.yaml`中的这几行注释掉即可：
+    ```
+    __include: easy_en:/patch
+    easy_en/enable_sentence: false
+    ```
+  - 2020.05.04 整合官方的[『八股文』](https://github.com/lotem/rime-octagram-data)，替代 Rime 默认的词表和词频（应该是重新训练了语言模型，好处是输入更加准确一些）。可以试试「各个国家都有各个国家的国歌」、「充满希望的跋涉比到达目的地更能给人乐趣」（第二句可能有点困难，跟你的输入法有关）
+  - 2020.11.15 1、**更新词库**，引用部分[@alswl](https://github.com/alswl/Rime)提供的细胞词库，以及[@thtfhsw](https://github.com/thtfhsw/rime-essay-creator)8万带词频的词典库。词库目前的标准是小而精，但也不能太小。由于Rime的特点（本地、不联网），目前的输入法还远远达不到联网输入法的精确度，词语的组合只能按照词频来。词库大小的限制，对于长句、长词，无法做到一次命中，这也是Rime最大的缺点了，也是非常难提升的点。如果长期使用Rime，自己养词库的话，这个缺点长期来看影响很小，毕竟输入法有记忆的功能。适当的配置加上符合自己的词库，Rime是一个非常棒的输入法。2、引入lua选词拓展[rime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)。引用原项目的介绍：
+  > 以词定字可以让你在输入一个词组后，选取这个词组的开头或结尾的一个字直接上屏，比如想要打“嫉”这个字，可以先打“嫉妒”再按 [ 键选择第一个字，这样在输入一些生僻字的时候会有所帮助。按 [ 键将会选中词组的第一个字，按 ] 键将会选中词组的最后一个字。
 
   -----
 
@@ -69,6 +95,9 @@
 
   ## 全拼用户
   Mac 用户使用 <code>Ctrl + &#96;</code> (`Tab`上面那个),切换至拼音那一项
+  请不要使用`luna_pinyin_simp.yaml`方案，因为我的配置文件未包含`custom.luna_pinyin_simp.yaml`，直接使用`luna_pinyin`即可。
+
+  默认是简体，如果不是，请在打字界面，按<code>Ctrl + &#96;</code> (`Tab`上面那个)，选“中/Y/半/汉"（可能是“中/N/半/汉"），第五项对应的是简繁切换，切换一下开关即可。
   
   表情显示有问题参见：
   * [4、emoji 的相关问题](#4emoji-%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98)
@@ -104,6 +133,7 @@
 
   **emoji 不显示**：<code>Ctrl + &#96;</code> (`Tab`上面那个)选“中/Y/半/汉"（可能是“中/N/半/汉"），第三项对应的是 emoji 的开关（可能指示的不准确），切换一下开关即可。
 
+
   **不需要 emoji**：同**emoji 不显示**，emoji 开关切换一下即可
 
   **已知 windows 显示的表情是黑白的，没有办法解决。**
@@ -122,19 +152,22 @@
 
   参照`symbols.yaml`修改(不建议直接修改`symbols.yaml`)
 
+  ### 7、提供网盘下载
+  热心老哥做了一个国内镜像，[gitee](https://gitee.com/Hoking/rime-settings)
+
+  还是推荐直接从git下载，因为网盘的版本可能会滞后。
+  
+  链接：https://pan.baidu.com/s/1MfpYYQ6K6bjj7_GmVwJwRw 提取码：018D 
 
   ## 如果你有其他问题，请开 issue，附上你的系统版本。
 
   -----
 
   ## 已知问题
-  - ~~**中文状态下，无法打出「-」**~~
-  **已解决**
-  
-  有此问题的，替换`double_pinyin_flypy.custom.yaml`和`double_pinyin_flypy.schema.yaml`
-
   - **windows 输入法皮肤部分特性不支持**
   - **windows emoji 黑白无彩色**
+  
+  上面两个问题，暂时无法解决，如果觉得丑就把表情关了吧！参见：[rime-emoji](https://github.com/rime/rime-emoji/issues/5)
 
 
   -----
@@ -144,9 +177,9 @@
 
   词库数量太大会拖慢输入法速度，如无必要，不准备添加长句进词库中。
 
-  **如果有大佬有比较好的建议或现成词库，欢迎提 issue 或提 PR**
+  **如果有比较好的建议或词库，欢迎提 issue 或提 PR**
 
-  
+
   ------
   
   ## 参考/致谢
@@ -154,5 +187,9 @@
   2. [鼠须管 0.11 Mac 升级重装配置 2019](https://github.com/cnfeat/Rime)
   3. [鼠须管配置 2019](https://placeless.net/blog/rime-squirrel-customization-2019#article)
   4. [Schema.yaml 詳解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
+  5. [rime-dict](https://github.com/xiaoTaoist/rime-dict)
+  6. [easy-en](https://github.com/BlindingDark/rime-easy-en)
+  7. [Rime](https://github.com/alswl/Rime)
+  8. [rime-lua-select-character](https://github.com/BlindingDark/rime-lua-select-character)
   
   
