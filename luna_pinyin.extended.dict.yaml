@@ -55,4 +55,5 @@ import_tables:
   - luna_pinyin.shopping
   - luna_pinyin.website
   - luna_pinyin.mingxing
+  - zhwiki
 ...

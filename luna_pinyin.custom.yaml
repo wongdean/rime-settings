@@ -18,14 +18,20 @@
 #
 #
 # 附朙月拼音系列方案與其對應的 id 一覽表：
-# 輸入方案	id
-# 朙月拼音	luna_pinyin
-# 朙月拼音·简化字	luna_pinyin_simp
-# 朙月拼音·臺灣正體	luna_pinyin_tw
-# 朙月拼音·語句流	luna_pinyin_fluency
-#
+# 輸入方案  id
+# 朙月拼音  luna_pinyin
+# 朙月拼音·简化字  luna_pinyin_simp
+# 朙月拼音·臺灣正體 luna_pinyin_tw
+# 朙月拼音·語句流  luna_pinyin_fluency
 
-patch:    
+
+#### 需要反查，打开所有带“反查”注释的行，和 reverse_lookup 块  #####
+patch:
+  schema:
+    name: 明月拼音
+    # dependencies: # 反查
+    #   - liangfen # 反查
+  
   # 載入朙月拼音擴充詞庫
   "translator/dictionary": luna_pinyin.extended
   #  拼写纠错
@@ -103,11 +109,11 @@ patch:
     - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
 
     # 以下是一組容錯拼寫，《漢語拼音》方案以前者爲正
-    #- derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
-    #- derive/^([jqxy])u/$1v/           # ju = jv,
-    #- derive/un$/uen/                  # gun = guen,
-    #- derive/ui$/uei/                  # gui = guei,
-    #- derive/iu$/iou/                  # jiu = jiou,
+    - derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
+    - derive/^([jqxy])u/$1v/           # ju = jv,
+    - derive/un$/uen/                  # gun = guen,
+    - derive/ui$/uei/                  # gui = guei,
+    - derive/iu$/iou/                  # jiu = jiou,
 
     # 自動糾正一些常見的按鍵錯誤
     - derive/([aeiou])ng$/$1gn/        # dagn => dang
@@ -117,8 +123,8 @@ patch:
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
 
   # 分尖團後 v => ü 的改寫條件也要相應地擴充：
-  'translator/preedit_format':
-   - "xform/([nljqxyzcs])v/$1ü/"
+  #'translator/preedit_format':
+   #- "xform/([nljqxyzcs])v/$1ü/"
 
   switches:
     - name: ascii_mode
@@ -140,6 +146,7 @@ patch:
     - punct_translator
     - script_translator
     - table_translator@custom_phrase
+    # - reverse_lookup_translator #反查
   engine/filters:
     - simplifier@emoji_suggestion
     #- simplifier@zh_simp
@@ -166,7 +173,6 @@ patch:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
-  reverse_lookup: {}
   
   punctuator:
     import_preset: symbols
@@ -190,7 +196,30 @@ patch:
       "<": ["《", "〈", "«", "<"]
       ">": ["》", "〉", "»", ">"]
 
-  recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
+  # 反查配置，若需要反查，则反注释 reverse_lookup 块
+  # reverse_lookup:
+  #   # 反查詞典設定
+  #   dictionary: liangfen
+  #   # 提前顯示尚未輸入完整碼的字〔僅 table_translator 有效〕
+  #   enable_completion: true
+  #   # 前綴
+  #   prefix: "`"
+  #   # 後綴
+  #   suffix: "'"
+  #   # 開始提示符
+  #   tips: 〔两分〕
+  #   # 上屏碼格
+  #   preedit_format:
+  #     - xlit/hspnz/一丨丿丶乙/
+  #   # 提示碼格式
+  #   comment_format:
+  #     - xform/([nl])v/$1ü/
+
+  recognizer:
+    patterns:
+      punct: "^/([0-9]0?|[A-Za-z]+)$"
+      # reverse_lookup: "`[a-z]*'?$" # 反查
+
 
   # 自定义词库
   custom_phrase:
@@ -207,7 +236,5 @@ patch:
   # easy_en/enable_sentence: false
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
   __include: grammar:/hant
-# Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin {
-  __include: lua_select_character:/patch
-# }
-
+# Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin
+  # __include: lua_select_character:/patch #需要以词定字插件打开本行注释
