@@ -1,7 +1,7 @@
 # Rime 鼠须管输入法傻瓜式配置指南
-  OS: macOS 10.14.6, Windows 10 LSTC 2019
+  OS: macOS 11.2.3, Windows 10 LSTC 2019
   
-  version: 0.14.0
+  version: 0.15.1
   
   Date:2021-04-05
   
@@ -19,7 +19,7 @@
   1. 简单易用，不需要代码基础。皮肤与macOS自带输入法皮肤比较相似
   2. 支持 emoji 候选，支持符号快捷输入，支持中英文混合输入，支持`/`+关键词实现快捷输入
   3. 配置了部分网络上的词库，单词库来讲，已经非常强大，全新配置的话，最多一周就非常顺手
-  4. 配置文件支持 Rime 鼠须管0.15.0(macOS)、Weasel 小狼毫0.14.3(Windows)，Linux,功能上都没有问题。
+  4. 配置文件支持 Rime 鼠须管0.15.1(macOS)、Weasel 小狼毫0.14.3(Windows),Linux,功能上都没有问题。
 
 
   ![rime](https://wang-1258168870.cos.ap-guangzhou.myqcloud.com/rime.jpg)
