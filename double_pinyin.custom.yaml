@@ -22,7 +22,6 @@ patch:
     - table_translator@custom_phrase
   engine/filters:
     - simplifier@emoji_suggestion
-    #- simplifier@zh_simp
     - simplifier
     - uniquifier
     #- charset_filter@gbk
@@ -92,6 +91,5 @@ patch:
   # easy_en/enable_sentence: false # 中英文混输的设置
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
   __include: grammar:/hant
-# Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin {
-  __include: lua_select_character:/patch
-# }
+# Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin
+  # __include: lua_select_character:/patch # 需要lua_selector打开本行注释
