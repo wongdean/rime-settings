@@ -13,4 +13,4 @@ patch:
     - zh_hans
     - emoji_suggestion
   menu/page_size: 9
-  ascii_composer: #   menu/page_size: 8
+  ascii_composer:

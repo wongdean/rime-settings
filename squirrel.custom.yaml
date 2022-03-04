@@ -60,8 +60,8 @@ patch:
       author: "mingcheng <mingcheng@outlook.com>"
       name: "Custom configure theme by mingcheng"
       corner_radius: 5
-      font_face: "STFangsong, HYFangSongJ, Fangsong, Sarasa Mono SC Light, PingFang SC Light"
-      font_point: 20
+      font_face: "PingFang SC"
+      font_point: 18
       horizontal: true
       inline_preedit: true
       line_spacing: 5
