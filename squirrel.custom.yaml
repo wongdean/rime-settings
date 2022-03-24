@@ -4,6 +4,10 @@ patch:
 
   # 以下软件默认英文模式
   app_options:
+    com.github.GitHubClient:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
     com.apple.dt.Xcode:
       ascii_mode: true
     com.runningwithcrayons.Alfred:
@@ -13,6 +17,8 @@ patch:
     com.googlecode.iterm2:
       ascii_mode: true
     com.apple.finder:
+      ascii_mode: true
+    com.sublimetext.4:
       ascii_mode: true
     com.sublimetext.3:
       ascii_mode: true
