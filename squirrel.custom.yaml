@@ -1,6 +1,6 @@
 patch:
   # 通知栏显示方式以及 ascii_mode 应用，与外观无关
-  show_notifications_via_notification_center: false
+  show_notifications_via_notification_center: true
   us_keyboard_layout: true
   # 以下软件默认英文模式
   app_options:
@@ -16,6 +16,24 @@ patch:
     #  ascii_mode: true
     # com.sublimetext.3:
     #   ascii_mode: true
+    com.github.GitHubClient:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
+    com.apple.dt.Xcode:
+      ascii_mode: true
+    com.runningwithcrayons.Alfred:
+      ascii_mode: true
+    com.apple.Terminal:
+      ascii_mode: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+    com.apple.finder:
+      ascii_mode: true
+    com.sublimetext.4:
+      ascii_mode: true
+    com.sublimetext.3:
+      ascii_mode: true
     com.apple.calculator:
       ascii_mode: true
     com.apple.launchpad.launcher:
