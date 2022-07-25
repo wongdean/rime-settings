@@ -18,8 +18,8 @@ patch:
     #   ascii_mode: true
     com.github.GitHubClient:
       ascii_mode: true
-    com.microsoft.VSCode:
-      ascii_mode: true
+    # com.microsoft.VSCode:
+    #   ascii_mode: true
     com.apple.dt.Xcode:
       ascii_mode: true
     com.runningwithcrayons.Alfred:

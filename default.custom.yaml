@@ -11,6 +11,6 @@ patch:
     - ascii_punct
     - simplification
     - zh_hans
-    - emoji_suggestion
+    # - emoji_suggestion
   menu/page_size: 9
   ascii_composer:
